@@ -16,12 +16,15 @@
  */
 package org.jboss.as.quickstarts.rshelloworld;
 
+import javax.enterprise.context.Dependent;
+
 /**
  * A simple CDI service which is able to say hello to someone
  *
  * @author Pete Muir
  *
  */
+@Dependent
 public class HelloService {
 
     String createHelloMessage(String name) {
