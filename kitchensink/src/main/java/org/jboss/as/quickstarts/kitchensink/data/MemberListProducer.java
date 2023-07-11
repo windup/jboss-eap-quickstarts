@@ -30,6 +30,7 @@ import jakarta.inject.Inject;
 import jakarta.inject.Named;
 
 @RequestScoped
+@Named("memberListProducer")
 public class MemberListProducer {
 
     @Inject
@@ -39,8 +40,8 @@ public class MemberListProducer {
 
     // @Named provides access the return value via the EL variable name "members" in the UI (e.g.
     // Facelets or JSP view)
-    @Produces
-    @Named
+    // @Produces
+    // @Named
     public List<Member> getMembers() {
         return members;
     }

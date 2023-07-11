@@ -22,6 +22,8 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.event.Event;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
+import jakarta.transaction.Transactional;
+
 import java.util.logging.Logger;
 
 // The @Stateless annotation eliminates the need for manual transaction demarcation
@@ -37,6 +39,7 @@ public class MemberRegistration {
     @Inject
     private Event<Member> memberEventSrc;
 
+    @Transactional
     public void register(Member member) throws Exception {
         log.info("Registering " + member.getName());
         em.persist(member);
